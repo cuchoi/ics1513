@@ -21,7 +21,7 @@ def demand_function(P, A, epsilon):
 
 # Set parameters
 A = 2  # Constant 
-epsilon = 0.5  # Elasticity parameter (positive)
+epsilon = -0.5  # Elasticity parameter (positive)
 
 # Create price range
 P = np.linspace(0.1, 5, 100)
