@@ -30,17 +30,19 @@ equilibrium_quantity_sympy = float(sqrt(10 * equilibrium_price_sympy) - 1)
 
 # Plot the curves
 plt.figure(figsize=(8, 6))
-plt.plot(p_values, q_s_values, label=r'Supply Curve: $Q_S(p) = \sqrt{10p} - 1$', color='blue')
-plt.plot(p_values, q_d_values, label=r'Demand Curve: $Q_D(p) = \frac{100 - p}{p}$', color='red')
+plt.plot(q_s_values, p_values, label=r'Curva de Oferta: $Q_S(p) = \sqrt{10p} - 1$', color='blue')
+plt.plot(q_d_values, p_values, label=r'Curva de Demanda: $Q_D(p) = \frac{100 - p}{p}$', color='red')
 
 # Mark equilibrium point
-plt.scatter(equilibrium_price_sympy, equilibrium_quantity_sympy, color='green', zorder=5, label=f'Equilibrium (sympy): (p={equilibrium_price_sympy:.2f}, Q={equilibrium_quantity_sympy:.2f})')
+plt.scatter(equilibrium_quantity_sympy, equilibrium_price_sympy, color='green', zorder=5, label=f'Equilibrio (sympy): (p={equilibrium_price_sympy:.2f}, Q={equilibrium_quantity_sympy:.2f})')
 
-plt.xlabel('Price (p)')
-plt.ylabel('Quantity (Q)')
-plt.title('Supply and Demand Curves')
+plt.ylabel('Precio (p)')
+plt.xlabel('Cantidad (Q)')
+plt.title('Curvas de Oferta y Demanda')
 plt.axhline(0, color='black', linewidth=0.5)
 plt.axvline(0, color='black', linewidth=0.5)
+plt.xlim(0, 40)
+plt.ylim(0, 40)
 plt.legend()
 plt.grid()
 plt.show()
